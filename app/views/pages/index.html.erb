@@ -1,2 +1,157 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('img/carousel01.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('img/carousel02.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Organize</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('img/carousel03.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Plan Ahead Of Others</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('img/carousel04.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Your Collaborators At Your Fingertips</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('img/carousel05.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Modern, Sleek And Innovative</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Say Hello To Smartups
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-flask"></i> Innovate</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Making the world a better place. Do you have a business idea? 
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-line-chart"></i> Lead</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Are you a self-organized person? Do you enjoy running a team? Would you like to explore leadership opportunities even further. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod? Lead or be lead; we leave it entirely to you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-users"></i> Collaborate</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>From now on, you're never going to be alone again. Does this sound scary to you? Well, it shouldn't.<br><br>
+Get to meet and interact with people from all backgrounds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- How It Works Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">How It Works</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '01sign-up', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '02confirm-email', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '03user-profile', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '04create-smartup', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '05join-smartup', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <%= image_tag '06collaborate', :class => 'img-responsive img-portfolio img-hover' %>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">What To Expect</h2>
+            </div>
+            <div class="col-md-6">
+                <p>We have set out to develop a state of the art, fully responsive, yet simple-to-use web platform for you to take advantage of.</p>
+								<p>Here is what you can expect from our very first pre-alpha release:</p>
+                <ul>
+                    <li>Responsive Web Design.</li>
+                    <li>User Profile System.</li>
+                    <li>Create New Smartup(s).</li>
+                    <li>Join Existing Smartup(s).</li>
+                </ul>
+								<p>Here is what functionality you can expect in the near future:</p>
+                <ul>
+                    <li>Sign-In via Social Media Accounts.</li>
+                    <li>Share Content to Social Media.</li>
+                    <li>Message System.</li>
+                    <li>Image Upload.</li>
+                    <li>And Much More...</li>
+                </ul>
+                <p>Our team is making some huge progress day by day.</p>
+            </div>
+            <div class="col-md-6">
+	          		<div class="thumbnail">
+	          		  <%= image_tag 'code', :class => 'img-responsive' %>
+								</div>
+            </div>
+        </div>
+        <!-- /.row -->
