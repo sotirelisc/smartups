@@ -26,17 +26,7 @@
 				                <div class="panel-body">
 				                    <%= form_for(@newsletter, role: 'form') do |f| %>
 				                        <fieldset>
-				                        	<% if @newsletter.errors.any? %>
-	  				                      	<div class="alert alert-danger">
-	  																	<p>
-	                                  		<ul>
-	                                  			<% @newsletter.errors.full_messages.each do |msg| %>
-																			      <li><%= msg %></li>
-																			    <% end %>
-	                                  		</ul>
-	                                  	</p>
-	  																</div>
-                                   <% end %>
+				                        	
 				                            <div class="form-group">
 				                            	<%= f.text_field :first_name, autofocus: true, :class => 'form-control input-small', :placeholder => 'First name' %>
 				                            </div>
@@ -46,6 +36,17 @@
 				                            <div class="form-group">
 				                                <%= f.email_field :email, :class => 'form-control', :placeholder => 'E-mail' %>
 				                            </div>
+				                            <% if @newsletter.errors.any? %>
+	  				                      	<div class="alert alert-danger">
+	  																	<p>
+	                                  		
+	                                  			<% @newsletter.errors.full_messages.each do |msg| %>
+																			      <li><%= msg %></li>
+																			    <% end %>
+	                                  		
+	                                  	</p>
+	  																</div>
+                                   <% end %>
 				                             <%= f.submit "Subscribe", :class => 'btn btn-lg btn-primary btn-block' %>
 				                        </fieldset>
 				                    <% end %>
