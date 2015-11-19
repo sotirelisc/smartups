@@ -7,11 +7,15 @@ class NewslettersController < ApplicationController
   
   def create
     @newsletter = Newsletter.new(newsletter_params)
-    respond_to do |format|
-      if @newsletter.save
-        format.html { redirect_to root_path, notice: 'Successfully subscribed!' }
-      else
-        format.html { render :new }
+    if !verify_recaptcha :error => 'Captcha is incorrect'
+      render :new
+    else 
+      respond_to do |format|
+        if @contact.save
+          format.html { redirect_to contact_path, notice: 'Successfully subscribed!' }
+        else
+          format.html { render :new }
+        end
       end
     end
   end

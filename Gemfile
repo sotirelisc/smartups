@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'mailchimp-api', require: 'mailchimp'
 # Use jquery as the JavaScript library
+#recaptcha https://github.com/ambethia/recaptcha/
+gem "recaptcha", :require => "recaptcha/rails"
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
