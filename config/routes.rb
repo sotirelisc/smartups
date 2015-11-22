@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :newsletters
   get 'newsletter' => 'newsletters#new'
   root 'pages#index'
+  get 'post' => 'posts#new'
   resources :posts
 end
