@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
 user = User.new(:first_name => "Admin", :last_name => "Administrator", :email => "admin@smartups.io", :password => Devise.friendly_token[0,20])
-user.skip_confirmation!
+# user.skip_confirmation!
 user.save!
 
 post1 = user.posts.build(:title => "Test title 1", :content => "Test content 1", :looking_for => "Developers")
