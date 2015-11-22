@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @post = current_user.posts.build(post_params)
@@ -8,7 +8,6 @@ class PostsController < ApplicationController
       flash[:success] = "Successfully created \"#{@post.title}\"!"
       redirect_to root_url
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
       render 'pages/index'
     end
   end
