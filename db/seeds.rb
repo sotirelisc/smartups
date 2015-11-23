@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
-user = User.new(:first_name => "Admin", :last_name => "Administrator", :email => "admin@smartups.io", :password => Devise.friendly_token[0,20])
+user = User.new(:first_name => "Admin", :last_name => "Administrator", :email => "admin@smartups.io", :password => "123456789")
 # user.skip_confirmation!
 user.save!
 
