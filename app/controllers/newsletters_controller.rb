@@ -9,10 +9,10 @@ class NewslettersController < ApplicationController
     @newsletter = Newsletter.new(newsletter_params)
     if !verify_recaptcha :error => 'Captcha is incorrect'
       render :new
-    else 
+    else
       respond_to do |format|
-        if @contact.save
-          format.html { redirect_to contact_path, notice: 'Successfully subscribed!' }
+        if @newsletter.save
+          format.html { redirect_to :new, notice: 'Successfully subscribed!' }
         else
           format.html { render :new }
         end
