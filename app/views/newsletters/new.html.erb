@@ -26,7 +26,7 @@
 				                <div class="panel-body">
 				                    <%= form_for(@newsletter, role: 'form') do |f| %>
 				                        <fieldset>
-				                        	
+				                       
 				                            <div class="form-group">
 				                            	<%= f.text_field :first_name, autofocus: true, :class => 'form-control input-small', :placeholder => 'First name' %>
 				                            </div>
@@ -47,6 +47,9 @@
 	                                  	</p>
 	  																</div>
                                    <% end %>
+                                   <% flash.each do |key, value| %>
+                                <div class="alert alert-danger"><center><%= value %></center></div>
+                                <% end %>
                                    <div class="form-group">
                                    	 <%= recaptcha_tags %>
                                    	 <br>
