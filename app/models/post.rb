@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :users
   
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 32 }

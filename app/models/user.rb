@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :posts
   has_many :posts, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
