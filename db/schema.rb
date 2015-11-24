@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122230857) do
+ActiveRecord::Schema.define(version: 20151124201800) do
 
-  create_table "interested", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
+  create_table "interests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "interest_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "interested", ["post_id"], name: "index_interested_on_post_id"
-  add_index "interested", ["user_id"], name: "index_interested_on_user_id"
+  add_index "interests", ["post_id"], name: "index_interests_on_post_id"
+  add_index "interests", ["user_id"], name: "index_interests_on_user_id"
 
   create_table "newsletters", force: :cascade do |t|
     t.string   "first_name"
