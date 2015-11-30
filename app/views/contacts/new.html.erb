@@ -1,4 +1,4 @@
-
+<% provide(:title, 'Contact') %>
     <!-- Page Content -->
     <div class="container">
 
@@ -62,31 +62,44 @@
         <div class="row">
             <div class="col-md-7">
                 <h3>Send Us A Message</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <%= form_for(@contact, role: 'form') do |f| %>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Full Name:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <%= f.text_field :full_name, autofocus: true, :class => 'form-control', :required => true, :id => 'name' %>
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Phone Number:</label>
-                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <%= f.text_field :phone_number, autofocus: true, :class => 'form-control', :required => true, :id => 'phone' %>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Email Address:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            <%= f.text_field :email, autofocus: true, :class => 'form-control', :required => true, :id => 'email' %>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Message:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <%= f.text_area :message, rows: '10', cols: '10', autofocus: true, :class => 'form-control', :required => true, :id => 'message' %>
                         </div>
+                      <% if @contact.errors.any? %>
+                      <div class="alert alert-success">
+                        <p>
+  	  									  <ul>
+  		                      <% @contact.errors.full_messages.each do |msg| %>
+  												    <li><%= msg %>.</li>
+  											    <% end %>
+  											  </ul>
+  	                     </p>
+                      </div>
+                      <% end %>
+                      <% flash.each do |key, value| %>
+                    <% end %>
                     </div>
                     <div id="success"></div>
 										<div class="alert alert-success">
@@ -96,8 +109,8 @@
 											<strong>Danger!</strong> Indicates a dangerous or potentially negative action.
 										</div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                    <%= f.submit "Send Message", :class => 'btn btn-primary' %>
+                <% end %>
             </div>
 
         </div>
