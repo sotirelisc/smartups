@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  
+  get 'contact' => 'contacts#new'
   get 'about' => 'pages#about'
   resources :contacts
-  get 'contact' => 'contacts#new'
-
+  
   devise_for :users
   
   resources :newsletters
