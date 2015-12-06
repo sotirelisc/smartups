@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'post' => 'posts#new'
   resources :posts
+  get 'tags/:tag', to: 'posts#index', as: :tag
 end

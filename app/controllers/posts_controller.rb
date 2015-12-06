@@ -2,6 +2,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :correct_user, only: :destroy
 
+  def index
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all
+    end
+  end
+
   def new
     @post = Post.new
   end
@@ -11,7 +19,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params.merge(:user_id => current_user.id))
     if @post.save
       flash[:success] = "Successfully created \"#{@post.title}\"!"
-      redirect_to root_url
+      redirect_to :index
     else
       render :new
     end
