@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params.merge(:user_id => current_user.id))
     if @post.save
       flash[:success] = "Successfully created \"#{@post.title}\"!"
-      redirect_to :index
+      redirect_to action: "index"
     else
       render :new
     end
