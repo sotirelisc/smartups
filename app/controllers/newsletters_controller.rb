@@ -6,17 +6,12 @@ class NewslettersController < ApplicationController
   end
   
   def create
-    @newsletter = Newsletter.new(newsletter_params)
-    if !verify_recaptcha(message: "Oh! It's error with reCAPTCHA!")
-      render :new
+    @newsletter = Newsletter.new newsletter_params
+    if verify_recaptcha(:model => @newsletter, :message => "is wrong", :attribute => "reCAPTCHA") && @newsletter.save
+      redirect_to root_path, notice: 'Successfully subscribed!'
     else
-      respond_to do |format|
-        if @newsletter.save
-          format.html { redirect_to root_path, notice: 'Successfully subscribed!' }
-        else
-          format.html { render :new}
-        end
-      end
+      flash.delete(:recaptcha_error)
+      render :new
     end
   end
 
