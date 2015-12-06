@@ -1,11 +1,14 @@
 <center>
 <div id="tag_cloud">
-  <% tag_cloud Post.skill_counts, %w[s m l] do |tag, css_class| %>
+  <% tag_cloud Post.skill_counts, %w[xs s m l] do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
 
 <div id="posts">
+  <% if @posts.empty? %>
+    No Smartup posts found!
+  <% end %>
   <% @posts.each do |post| %>
     <h2><%= post.title %></h2>
     Tags: <%= raw post.skill_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
