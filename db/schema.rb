@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206112728) do
+ActiveRecord::Schema.define(version: 20151206133111) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "full_name"
@@ -55,10 +55,9 @@ ActiveRecord::Schema.define(version: 20151206112728) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "looking_for"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|

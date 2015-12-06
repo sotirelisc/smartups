@@ -7,12 +7,13 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = current_user.posts.build(post_params)
+    # For some reason we have to provide again the current user's id.
+    @post = current_user.posts.new(post_params.merge(:user_id => current_user.id))
     if @post.save
       flash[:success] = "Successfully created \"#{@post.title}\"!"
       redirect_to root_url
     else
-      render 'pages/index'
+      render :new
     end
   end
 
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, :looking_for)
+      params.require(:post).permit(:title, :content, :skill_list)
     end
     
     def correct_user
