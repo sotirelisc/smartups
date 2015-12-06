@@ -11,5 +11,5 @@ user = User.new(:first_name => "Admin", :last_name => "Administrator", :email =>
 # user.skip_confirmation!
 user.save!
 
-post1 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 1", :content => "Test content 1", :looking_for => "Developers").save!
-post2 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 2", :content => "Test content 2", :looking_for => "Designers").save!
+post1 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 1", :content => "Test content 1", :skill_list => "javascript, nodejs").save!
+post2 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 2", :content => "Test content 2", :skill_list => "rails, ruby").save!
