@@ -18,8 +18,8 @@ class Post < ActiveRecord::Base
 
     # Validates the size of an uploaded picture.
     def image_size
-      if image.size > 2.megabytes
-        errors.add(:image, "should be less than 2MB")
+      if post_image.size > 2.megabytes
+        errors.add(:post_image, "should be less than 2MB")
       end
     end
 end
