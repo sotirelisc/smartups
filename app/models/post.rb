@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 32 }
   validates :content, presence: true, length: { maximum: 512 }
+  validates :skills, presence: true
   # validates :looking_for, presence: true, length: { maximum: 64 }
   validate :image_size
   
