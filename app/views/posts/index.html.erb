@@ -14,4 +14,5 @@
     Tags: <%= raw post.skill_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
   <% end %>
 </div>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 </center>
