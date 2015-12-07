@@ -10,6 +10,16 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 32 }
   validates :content, presence: true, length: { maximum: 512 }
   # validates :looking_for, presence: true, length: { maximum: 64 }
+  validate :image_size
   
   default_scope -> { order(created_at: :desc) }
+  
+  private
+
+    # Validates the size of an uploaded picture.
+    def image_size
+      if image.size > 2.megabytes
+        errors.add(:image, "should be less than 2MB")
+      end
+    end
 end
