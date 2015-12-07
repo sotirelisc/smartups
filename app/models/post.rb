@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  mount_uploader :post_image, PostImageUploader
   # Tags instead of looking_for.
   acts_as_taggable_on :skills
   belongs_to :user
