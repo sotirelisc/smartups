@@ -1,28 +1,10 @@
-== README
+You can use Cloud9 (online IDE) for PCV development to avoid installing Ruby/Rails on your system (issues occur on Windows).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install MiniMagick on your system
 
-Things you may want to cover:
+To enable image resizing, MiniMagick needs to be installed on your system or Cloud9 using ```sudo apt-get update```
+and then ```sudo apt-get install imagemagick --fix-missing```.
 
-* Ruby version
+## Run in development
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To run PCV in development use ```rails s``` on your system, or ```ruby s.rb``` on Cloud9.
