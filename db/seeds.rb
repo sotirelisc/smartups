@@ -1,15 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+# User associated posts will be automatically deleted.
 User.delete_all
+
+# Setup demo user.
 user = User.new(:first_name => "Admin", :last_name => "Administrator", :email => "admin@smartups.io", :password => "123456789")
 # user.skip_confirmation!
 user.save!
 
-post1 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 1", :content => "Test content 1", :skill_list => "javascript, nodejs").save!
-post2 = User.first.posts.new(:user_id => User.first.id, :title => "Test title 2", :content => "Test content 2", :skill_list => "rails, ruby").save!
+# Setup demo posts.
+post1 = User.first.posts.new(:user_id => User.first.id, :title => "Santa Claus", :content => "Cause Santa Claus is coming to town!")
+# Deliberately skip skills validation, to add them afterwards.
+post1.skip_skills_validation = true
+post1.skill_list.add "javascript"
+post1.skill_list.add "nodejs"
+post1.save!
+
+post2 = User.first.posts.new(:user_id => User.first.id, :title => "Smartups Platform", :content => "Innovate, lead, collaborate.")
+post2.skip_skills_validation = true
+post2.skill_list.add "ruby"
+post2.skill_list.add "rails"
+post2.skill_list.add "javascript"
+post2.save!

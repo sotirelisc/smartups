@@ -9,9 +9,11 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 32 }
   validates :content, presence: true, length: { maximum: 512 }
-  validates :skills, presence: true
+  validates :skills, presence: true, unless: :skip_skills_validation
   # validates :looking_for, presence: true, length: { maximum: 64 }
   validate :image_size
+  
+  attr_accessor :skip_skills_validation
   
   default_scope -> { order(created_at: :desc) }
   
