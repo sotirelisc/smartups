@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
   # User validations.
-  validates :first_name, presence: true, length: { minimum: 4, maximum: 64 }
-  validates :last_name, presence: true, length: { minimum: 4, maximum: 64 }
+  validates :first_name, presence: true, length: { minimum: 3, maximum: 64 }
+  validates :last_name, presence: true, length: { minimum: 3, maximum: 64 }
   validate :image_size
   
   # Returns user's fullname.
