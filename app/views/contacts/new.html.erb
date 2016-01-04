@@ -56,13 +56,23 @@
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Contact Form -->
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-md-7">
                 <h3>Send Us A Message</h3>
                 <%= form_for(@contact, role: 'form') do |f| %>
+                    <% if @contact.errors.any? %>
+                      <div class="alert alert-sucess">
+                        <p>
+  	  									  <ul>
+  		                      <% @contact.errors.full_messages.each do |msg| %>
+  												    <li><%= msg %>.</li>
+  											    <% end %>
+  											  </ul>
+  	                     </p>
+                      </div>
+                    <% end %>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Full Name:</label>
@@ -87,17 +97,6 @@
                             <label>Message:</label>
                             <%= f.text_area :message, rows: '10', cols: '10', autofocus: true, :class => 'form-control', :required => true, :id => 'message' %>
                         </div>
-                      <% if @contact.errors.any? %>
-                      <div class="alert alert-success">
-                        <p>
-  	  									  <ul>
-  		                      <% @contact.errors.full_messages.each do |msg| %>
-  												    <li><%= msg %>.</li>
-  											    <% end %>
-  											  </ul>
-  	                     </p>
-                      </div>
-                      <% end %>
                       <% flash.each do |key, value| %>
                     <% end %>
                     </div>
@@ -105,6 +104,5 @@
                     <%= f.submit "Send Message", :class => 'btn btn-primary' %>
                 <% end %>
             </div>
-
         </div>
         <!-- /.row -->
