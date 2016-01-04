@@ -63,7 +63,7 @@
                 <h3>Send Us A Message</h3>
                 <%= form_for(@contact, role: 'form') do |f| %>
                     <% if @contact.errors.any? %>
-                      <div class="alert alert-sucess">
+                      <div class="alert alert-warning">
                         <p>
   	  									  <ul>
   		                      <% @contact.errors.full_messages.each do |msg| %>
