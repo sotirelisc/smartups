@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         format.html { redirect_to contact_path}
-        flash[:success] = "Welcome to the Sample App!"
+        flash[:success] = "Thank you for sharing your thoughts with us."
       else
         format.html { render :new }
       end
