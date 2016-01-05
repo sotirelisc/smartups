@@ -9,7 +9,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to contact_path, notice: 'We received your message. Thank you for sharing your opinion with us.' }
+        format.html { redirect_to contact_path}
+        flash[:success] = "Thank you for sharing your thoughts with us."
       else
         format.html { render :new }
       end
