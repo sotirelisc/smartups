@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   root 'pages#index'
   
   get 'contact' => 'contacts#new'
