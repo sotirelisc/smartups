@@ -7,4 +7,4 @@ and then ```sudo apt-get install imagemagick --fix-missing```, or your system's 
 
 ## Run in development
 
-To run PCV in development use ```rails s``` on your system, or ```ruby s.rb``` on Cloud9.
+To run Smartups in development use ```rails s``` on your system, or ```ruby s.rb``` on Cloud9.
