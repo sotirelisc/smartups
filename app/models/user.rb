@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   # User skills in form of tags.
   acts_as_taggable_on :skills
   
+  # User notifications.
+  has_many :notifications
+  
   # User relations and settings.
   has_many :interests
   has_many :posts, dependent: :destroy, through: :interests
