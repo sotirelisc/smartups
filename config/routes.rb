@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/profile'
+  get 'dashboard/search'
+  get 'dashboard/settings'
+  get 'dashboard/support'
   get 'dashboard' => 'dashboard#index'
   
   get 'newsletters' => 'newsletters#new'
