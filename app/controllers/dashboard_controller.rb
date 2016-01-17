@@ -1,7 +1,9 @@
 class DashboardController < ApplicationController
+  before_action :authenticate_user!
   layout 'dashboard'
   
   def index
+    get_interested_notifications
   end
   
   def interested
@@ -18,7 +20,11 @@ class DashboardController < ApplicationController
     def get_interested_notifications
       @notifications = []
       current_user.notifications.each do |n|
-        @notifications << "#{n.user_id.full_name} #{n.text} your #{n.post_id.title} post."
+        notification = Hash.new
+        notification[:text] = "#{n.user.full_name} #{n.text} your #{n.post.title} post."
+        notification[:when] = n.created_at
+        notification[:redirect] = n.user
+        @notifications << notification
       end
     end
 end
