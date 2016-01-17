@@ -8,7 +8,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                    <i class="fa fa-dashboard"></i>  <%= link_to 'Dashboard', dashboard_path %>
                 </li>
             </ol>
         </div>
@@ -28,9 +28,7 @@
 				</div>
 				<div class="panel-body">
 				<% if @notifications.empty? %>
-
-					 	 There are no notifications right now.
-				
+					There are no notifications right now.
 				<% else %>
 				   <div class="list-group">
 				    		<% @notifications.each do |n| %>
