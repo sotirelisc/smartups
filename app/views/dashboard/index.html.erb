@@ -27,19 +27,25 @@
 				    <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Notifications</h3>
 				</div>
 				<div class="panel-body">
-				    <div class="list-group">
+				<% if @notifications.empty? %>
+
+					 	 There are no notifications right now.
+				
+				<% else %>
+				   <div class="list-group">
 				    		<% @notifications.each do |n| %>
 				    			<%= link_to "users/#{n[:redirect].id}", :class => 'list-group-item' do %>
 				    				<span class="badge"><%= time_ago_in_words(n[:when]).gsub('minutes', 'mins') %> ago</span>
 				    				<i class="fa fa-fw fa-user"></i> <%= n[:text] %>
 				    			<% end %>
 				    		<% end %>
-				    </div>
-				    <div class="text-right">
-				        <a href="notifications.html">View All Notifications <i class="fa fa-arrow-circle-right"></i></a>
-				     </div>
-			     </div>
+				   </div>
+				   <div class="text-right">
+					   <a href="notifications.html">View All Notifications <i class="fa fa-arrow-circle-right"></i></a>
+				   </div>
+			  <% end %>
 			 </div>
+			</div>
 		</div>
 		<div class="col-lg-6">
 			<div class="panel panel-default">
