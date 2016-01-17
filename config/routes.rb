@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get 'dashboard' => 'dashboard#index'
   get 'profile' => 'dashboard#profile'
+  get 'profile/:id' => 'dashboard#profile'
   get 'settings' => 'dashboard#settings'
   get 'support' => 'dashboard#support'
   get 'notifications' => 'dashboard#notifications'
