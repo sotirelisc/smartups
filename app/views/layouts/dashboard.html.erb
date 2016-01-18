@@ -56,10 +56,14 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
           <li class="active">
-            <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <%= link_to dashboard_path do %>
+              <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <% end %>
           </li>
           <li>
-            <a href="search.html"><i class="fa fa-fw fa-search"></i> Search Smartups</a>
+            <%= link_to search_path do %>
+              <i class="fa fa-fw fa-search"></i> Search Smartups</a>
+            <% end %>
           </li>
           <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#gotanidea"><i class="fa fa-fw fa-lightbulb-o"></i> Got An Idea?<i class="fa fa-fw fa-caret-down"></i></a>
@@ -85,13 +89,19 @@
   	      <a href="javascript:;" data-toggle="collapse" data-target="#toolkit"><i class="fa fa-fw fa-wrench"></i> Toolkit <i class="fa fa-fw fa-caret-down"></i></a>
   	       <ul id="toolkit" class="collapse">
   	   <li>
-  			 <a href="notifications.html"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+  			 <%= link_to notifications_path do %>
+  			   <i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+  			 <% end %>
   		</li>
   		<li>
-  		    <a href="news.html"><i class="fa fa-fw fa-newspaper-o"></i> News</a>
+  		    <%= link_to news_path do %>
+  		      <i class="fa fa-fw fa-newspaper-o"></i> News</a>
+  		    <% end %>
   		</li>
   		<li>
-  			 <a href="support.html"><i class="fa fa-fw fa-life-ring"></i> Support</a>
+  			 <%= link_to support_path do %>
+  			   <i class="fa fa-fw fa-life-ring"></i> Support</a>
+  			 <% end %>
   		</li>
   	   </ul>
   	  </li>
