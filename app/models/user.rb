@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
   acts_as_taggable_on :skills
   
   # User notifications.
-  has_many :notifications
+  # The sender is usually the interested user.
+  has_many :sent_notifications, :class_name => 'Notification', :foreign_key => 'sender_id'
+  # The recipient is the one getting the notification.
+  has_many :received_notifications, :class_name => 'Notification', :foreign_key => 'recipient_id'
   
   # User relations and settings.
   has_many :interests
