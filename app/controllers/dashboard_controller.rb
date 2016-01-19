@@ -20,19 +20,19 @@ class DashboardController < ApplicationController
     # Create the interest.
     current_user.interests.create!(post_id: post)
     # Create a notification for the post creator.
-    p.user.notifications.create!(text: "is interested in", user_id: current_user.id, post_id: post)
+    Notification.create!(sender_id: current_user.id, recipient_id: Post.find_by_id(post).user, text_msg: "is interested in", post_id: post)
   end
   
   private
   
     def get_interested_notifications
       @notifications = []
-      current_user.notifications.each do |n|
+      current_user.received_notifications.each do |n|
         notification = Hash.new
-        other_user = User.find_by_id(n.user_id)
-        notification[:text] = "#{other_user.full_name} #{n.text} your #{n.post.title} post."
+        sender = User.find_by_id(n.sender_id)
+        notification[:text] = "#{sender.full_name} #{n.text_msg} your #{n.post.title} post."
         notification[:when] = n.created_at
-        notification[:redirect] = n.user
+        notification[:redirect] = sender.id
         @notifications << notification
       end
     end
