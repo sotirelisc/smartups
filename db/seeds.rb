@@ -26,9 +26,9 @@ post2.skill_list.add "javascript"
 post2.save!
 
 Interest.delete_all
-Notification.delete_all
 
 zach.interests.create!(post_id: post1.id)
 
-# TODO: Fix notifications
-post1.user.notifications.create!(text: "is interested in", user_id: user2.id, post_id: post1.id)
+Notification.delete_all
+
+Notification.new(sender_id: zach.id, recipient_id: chris.id, text_msg: "is interested in", post_id: post1.id).save!
