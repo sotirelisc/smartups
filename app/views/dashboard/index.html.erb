@@ -32,7 +32,7 @@
 				<% else %>
 				   <div class="list-group">
 				    		<% @notifications.each do |n| %>
-				    			<%= link_to "profile/#{n[:redirect].id}", :class => 'list-group-item' do %>
+				    			<%= link_to "profile/#{n[:redirect]}", :class => 'list-group-item' do %>
 				    				<span class="badge"><%= time_ago_in_words(n[:when]).gsub('minutes', 'mins') %> ago</span>
 				    				<i class="fa fa-fw fa-user"></i> <%= n[:text] %>
 				    			<% end %>
