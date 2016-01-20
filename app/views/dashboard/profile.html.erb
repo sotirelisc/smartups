@@ -1,120 +1,124 @@
 <% provide(:title, 'Profile') %>
 <div id="page-wrapper">
-            <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            <%= @user.full_name %> 
-							<small><i class="fa fa-pencil fa-1x"></i></small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <%= link_to 'Dashboard', dashboard_path %>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-user"></i> John Doe
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-            
-							<div class="row">
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Information
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-																		<img src = "https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class ="img-thumbnail"><br><br>
-                                    <ul class="fa-ul">
-																			<li><i class="fa-li fa fa-calendar"></i>Joined on Blah Blah</li>
-																			<li><i class="fa-li fa fa-globe"></i>Greece</li>
-																			<li><i class="fa-li fa fa-clock-o"></i>01:08 Europe/Athens</li>
-																		</ul>   
-                                    <ul class="fa-ul">
-																			<li><i class="fa-li fa fa-facebook"></i><a href="https://www.facebook.com/smartupsio/">/smartupsio</a></li>
-																			<li><i class="fa-li fa fa-twitter"></i><a href="https://twitter.com/smartupsio/">@smartupsio</a></li>
-																			<li><i class="fa-li fa fa-linkedin"></i><a href="https://twitter.com/smartupsio/">smartupsio</a></li>
-																		</ul>                          
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+          <div class="container-fluid">
+              <!-- Page Heading -->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <h1 class="page-header">
+                          <%= @user.full_name %>
+                          <% if @user == current_user %>
+					                  <%= link_to settings_path do %>
+                            <small><i class="fa fa-pencil fa-1x"></i></small>
+						                <% end %>
+						              <% end %>
+                      </h1>
+                      <ol class="breadcrumb">
+                          <li>
+                              <i class="fa fa-dashboard"></i>  <%= link_to 'Dashboard', dashboard_path %>
+                          </li>
+                          <li class="active">
+                              <i class="fa fa-user"></i> <%= @user.full_name %>
+                          </li>
+                      </ol>
+                  </div>
+              </div>
+              <!-- /.row -->
+          
+						<div class="row">
+              <div class="col-lg-3">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          Basic Information
+                      </div>
+                      <div class="panel-body">
+                          <div class="row">
+                              <div class="col-lg-12">
+																	<img src = "https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class ="img-thumbnail"><br><br>
+                                  <ul class="fa-ul">
+																		<li><i class="fa-li fa fa-calendar"></i>Joined on Blah Blah</li>
+																		<li><i class="fa-li fa fa-globe"></i>Greece</li>
+																		<li><i class="fa-li fa fa-clock-o"></i>01:08 Europe/Athens</li>
+																	</ul>   
+                                  <ul class="fa-ul">
+																		<li><i class="fa-li fa fa-facebook"></i><a href="https://www.facebook.com/smartupsio/">/smartupsio</a></li>
+																		<li><i class="fa-li fa fa-twitter"></i><a href="https://twitter.com/smartupsio/">@smartupsio</a></li>
+																		<li><i class="fa-li fa fa-linkedin"></i><a href="https://twitter.com/smartupsio/">smartupsio</a></li>
+																	</ul>                          
+                              </div>
+                              <!-- /.col-lg-6 (nested) -->
 
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
+                          </div>
+                          <!-- /.row (nested) -->
+                      </div>
+                      <!-- /.panel-body -->
+                  </div>
+                  <!-- /.panel -->
+              </div>
+              <!-- /.col-lg-12 -->
 
-                <div class="col-lg-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Detailed Information
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-8">
-                       						<h3><i class="fa fa-fw fa-user"></i> Short Bio</h3>
-																	<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet convallis ipsum, sit amet posuere purus posuere sed. Donec pulvinar sapien sit amet ultrices pulvinar. Pellentesque malesuada ullamcorper nunc, non egestas mauris fringilla at. Sed euismod varius libero id sagittis. Maecenas orci lacus, aliquet ac mollis commodo, pretium ultricies tortor.</p>
+              <div class="col-lg-8">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          Detailed Information
+                      </div>
+                      <div class="panel-body">
+                          <div class="row">
+                              <div class="col-lg-8">
+                     						<h3><i class="fa fa-fw fa-user"></i> Short Bio</h3>
+																<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet convallis ipsum, sit amet posuere purus posuere sed. Donec pulvinar sapien sit amet ultrices pulvinar. Pellentesque malesuada ullamcorper nunc, non egestas mauris fringilla at. Sed euismod varius libero id sagittis. Maecenas orci lacus, aliquet ac mollis commodo, pretium ultricies tortor.</p>
 
-                       						<h3><i class="fa fa-fw fa-graduation-cap"></i> Education</h3>
+                     						<h3><i class="fa fa-fw fa-graduation-cap"></i> Education</h3>
+																<ul class="list">
+																	<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
 																	<ul class="list">
-																		<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
-																		<ul class="list">
-																			<li class="list-item">May 2013 - June 2019</li>
-																			<li class="list-item">GPA: 9.9/10</li>
-																		</ul>
-																		<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
-																		<ul class="list">
-																			<li class="list-item">May 2013 - June 2019</li>
-																			<li class="list-item">GPA: 9.9/10</li>
-																		</ul>
+																		<li class="list-item">May 2013 - June 2019</li>
+																		<li class="list-item">GPA: 9.9/10</li>
 																	</ul>
-																	
-																	<p>University of the Aegean | May 2013 - June 2019 | GPA: 9.9/10</p>     
-
-                       						<h3><i class="fa fa-fw fa-folder-open"></i> Work Experience</h3>
-
+																	<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
 																	<ul class="list">
-																		<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
-																		<ul class="list">
-																			<li class="list-item">May 2013 - June 2019</li>
-																			<li class="list-item">GPA: 9.9/10</li>
-																		</ul>
-																		<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
-																		<ul class="list">
-																			<li class="list-item">May 2013 - June 2019</li>
-																			<li class="list-item">GPA: 9.9/10</li>
-																		</ul>
+																		<li class="list-item">May 2013 - June 2019</li>
+																		<li class="list-item">GPA: 9.9/10</li>
 																	</ul>
-	
-																	<p>University of the Aegean | May 2013 - June 2019 | GPA: 9.9/10</p>   
-																	<p>University of the Aegean <small>May 2013 - June 2019</small> | GPA: 9.9/10</p>   
-                                  
-                       						<h3><i class="fa fa-fw fa-gears"></i> Skills</h3>
-																	<p>C Programming, Java, HTML5</p>
+																</ul>
+																
+																<p>University of the Aegean | May 2013 - June 2019 | GPA: 9.9/10</p>     
 
-                       						<h3><i class="fa fa-fw fa-comments-o"></i> Languages</h3>
-																	<p>English, Greek</p>
-                                     
-                                                                    
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+                     						<h3><i class="fa fa-fw fa-folder-open"></i> Work Experience</h3>
 
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
+																<ul class="list">
+																	<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
+																	<ul class="list">
+																		<li class="list-item">May 2013 - June 2019</li>
+																		<li class="list-item">GPA: 9.9/10</li>
+																	</ul>
+																	<li class="list-item">University of the Aegean, Dept. of Mathematics</li>
+																	<ul class="list">
+																		<li class="list-item">May 2013 - June 2019</li>
+																		<li class="list-item">GPA: 9.9/10</li>
+																	</ul>
+																</ul>
 
-            </div>
-            <!-- /.row -->
+																<p>University of the Aegean | May 2013 - June 2019 | GPA: 9.9/10</p>   
+																<p>University of the Aegean <small>May 2013 - June 2019</small> | GPA: 9.9/10</p>   
+                                
+                     						<h3><i class="fa fa-fw fa-gears"></i> Skills</h3>
+																<p>C Programming, Java, HTML5</p>
+
+                     						<h3><i class="fa fa-fw fa-comments-o"></i> Languages</h3>
+																<p>English, Greek</p>
+                                   
+                                                                  
+                              </div>
+                              <!-- /.col-lg-6 (nested) -->
+
+                          </div>
+                          <!-- /.row (nested) -->
+                      </div>
+                      <!-- /.panel-body -->
+                  </div>
+                  <!-- /.panel -->
+              </div>
+              <!-- /.col-lg-12 -->
+
+          </div>
+          <!-- /.row -->
