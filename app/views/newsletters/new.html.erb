@@ -28,13 +28,13 @@
 				                        <fieldset>
 				                       
 				                            <div class="form-group">
-				                            	<%= f.text_field :first_name, autofocus: true, :class => 'form-control input-small', :placeholder => 'First name' %>
+				                            	<%= f.text_field :first_name, autofocus: true, :class => 'form-control input-small', :required => true, :placeholder => 'First name' %>
 				                            </div>
 				                            <div class="form-group">
-				                                <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last name' %>
+				                                <%= f.text_field :last_name, :class => 'form-control', :required => true, :placeholder => 'Last name' %>
 				                            </div>
 				                            <div class="form-group">
-				                                <%= f.email_field :email, :class => 'form-control', :placeholder => 'E-mail' %>
+				                                <%= f.email_field :email, :class => 'form-control', :required => true, :placeholder => 'E-mail' %>
 				                            </div>
 				                            <% if @newsletter.errors.any? %>
 	  				                      	<div class="alert alert-danger">
