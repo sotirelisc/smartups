@@ -14,101 +14,101 @@
   </head>
   <body>
     <div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <%= link_to 'smartups', dashboard_path, :class => 'navbar-brand' %>
-    </div>
-    <!-- Top Menu Items -->
-    <ul class="nav navbar-right top-nav">
-      <!-- User Menu Start --> 
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_user.full_name %> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li>
-            <%= link_to profile_path do %>
-              <i class="fa fa-fw fa-user"></i> Profile</a>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to settings_path do %>
-              <i class="fa fa-fw fa-gear"></i> Settings</a>
-            <% end %>
-          </li>
-          <li class="divider"></li>
+      <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <%= link_to 'smartups', dashboard_path, :class => 'navbar-brand' %>
+      </div>
+      <!-- Top Menu Items -->
+      <ul class="nav navbar-right top-nav">
+        <!-- User Menu Start --> 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_user.full_name %> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
             <li>
-            <%= link_to destroy_user_session_path, :method => :delete do %>
-              <i class="fa fa-fw fa-power-off"></i> Log Out</a>
-            <% end %>
-          </li>
-        </ul>
-      </li>
-  		<!-- User Menu End --> 
-      </ul>
-      <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-          <li class="active">
-            <%= link_to dashboard_path do %>
-              <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to search_path do %>
-              <i class="fa fa-fw fa-search"></i> Search Smartups</a>
-            <% end %>
-          </li>
-          <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#gotanidea"><i class="fa fa-fw fa-lightbulb-o"></i> Got An Idea?<i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="gotanidea" class="collapse">
-    					<li>
-    					  <a href="evaluation.html"><i class="fa fa-fw fa-calculator"></i> Evaluate It</a>
-    					</li>
-  					<li>
-  					  <a href="partners.html"><i class="fa fa-fw fa-users"></i> Search For Partners</a>
-  			    </li>
-  		    <li>
-  			       <a href="incubators.html"><i class="fa fa-fw fa-map-marker"></i> Locate Incubators</a>
-  	    </li>
-    <li>
-  	       <a href="mentors.html"><i class="fa fa-fw fa-thumbs-o-up"></i> Find Mentors</a>
-  				    </li>
-  				    <li>
-  		      <a href="funding.html"><i class="fa fa-fw fa-money"></i> Get Funded</a>
-  			 </li>
+              <%= link_to profile_path do %>
+                <i class="fa fa-fw fa-user"></i> Profile
+              <% end %>
+            </li>
+            <li>
+              <%= link_to settings_path do %>
+                <i class="fa fa-fw fa-gear"></i> Settings
+              <% end %>
+            </li>
+            <li class="divider"></li>
+              <li>
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                <i class="fa fa-fw fa-power-off"></i> Log Out
+              <% end %>
+            </li>
           </ul>
-         </li>
-  	    <li>
-  	      <a href="javascript:;" data-toggle="collapse" data-target="#toolkit"><i class="fa fa-fw fa-wrench"></i> Toolkit <i class="fa fa-fw fa-caret-down"></i></a>
-  	       <ul id="toolkit" class="collapse">
-  	   <li>
-  			 <%= link_to notifications_path do %>
-  			   <i class="fa fa-fw fa-bell-o"></i> Notifications</a>
-  			 <% end %>
-  		</li>
-  		<li>
-  		    <%= link_to news_path do %>
-  		      <i class="fa fa-fw fa-newspaper-o"></i> News</a>
-  		    <% end %>
-  		</li>
-  		<li>
-  			 <%= link_to support_path do %>
-  			   <i class="fa fa-fw fa-life-ring"></i> Support</a>
-  			 <% end %>
-  		</li>
-  	   </ul>
-  	  </li>
-     </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-    </nav>
+        </li>
+    		<!-- User Menu End --> 
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active">
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-fw fa-dashboard"></i> Dashboard
+              <% end %>
+            </li>
+            <li>
+              <%= link_to search_path do %>
+                <i class="fa fa-fw fa-search"></i> Search Smartups
+              <% end %>
+            </li>
+            <li>
+              <a href="javascript:;" data-toggle="collapse" data-target="#gotanidea"><i class="fa fa-fw fa-lightbulb-o"></i> Got An Idea?<i class="fa fa-fw fa-caret-down"></i></a>
+              <ul id="gotanidea" class="collapse">
+      					<li>
+                  <a href="#"><i class="fa fa-fw fa-calculator"></i> Evaluate It</a>
+                </li>
+      					<li>
+      					  <a href="partners.html"><i class="fa fa-fw fa-users"></i> Search For Partners</a>
+      			    </li>
+        		    <li>
+        			    <a href="incubators.html"><i class="fa fa-fw fa-map-marker"></i> Locate Incubators</a>
+        	      </li>
+                <li>
+    	            <a href="mentors.html"><i class="fa fa-fw fa-thumbs-o-up"></i> Find Mentors</a>
+    				    </li>
+    				    <li>
+    				      <a href="funding.html"><i class="fa fa-fw fa-money"></i> Get Funded</a>
+    			      </li>
+              </ul>
+            </li>
+    	    <li>
+    	      <a href="javascript:;" data-toggle="collapse" data-target="#toolkit"><i class="fa fa-fw fa-wrench"></i> Toolkit <i class="fa fa-fw fa-caret-down"></i></a>
+    	       <ul id="toolkit" class="collapse">
+    	   <li>
+    			 <%= link_to notifications_path do %>
+    			   <i class="fa fa-fw fa-bell-o"></i> Notifications
+    			 <% end %>
+    		</li>
+    		<li>
+    		    <%= link_to news_path do %>
+    		      <i class="fa fa-fw fa-newspaper-o"></i> News
+    		    <% end %>
+    		</li>
+    		<li>
+    			 <%= link_to support_path do %>
+    			   <i class="fa fa-fw fa-life-ring"></i> Support
+    			 <% end %>
+    		</li>
+    	   </ul>
+    	  </li>
+       </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+      </nav>
     <%= yield %>
     <hr>
   	<footer>
