@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def new_user?
+    Date.today - created_at.to_date <= 2
+  end
+  
   private
 
     # Validates the size of an uploaded picture.
