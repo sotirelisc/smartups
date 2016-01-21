@@ -214,6 +214,9 @@ GEM
     nokogiri (1.6.6.3)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    passenger (5.0.23)
+      rack
+      rake (>= 0.8.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -318,6 +321,7 @@ DEPENDENCIES
   jquery-rails
   mailchimp-api
   mini_magick
+  passenger
   rails (= 4.2.4)
   recaptcha
   rspec-rails (~> 3.0)
